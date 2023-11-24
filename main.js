@@ -41,7 +41,6 @@ function editTask(id) {
         return task.id === id;
     });
 
-    // Check if the task is completed before allowing editing
     if (!taskToEdit.completed) {
         var taskTextElement = document.getElementById('task-text-' + id);
 
@@ -93,11 +92,10 @@ function renderTasks() {
         taskText.innerText = task.text;
         taskText.id = 'task-text-' + task.id;
 
-        // Check if the task is completed
         if (task.completed) {
             listItem.classList.add('completed');
         } else {
-            // Add click event for editing only if the task is not completed
+
             taskText.addEventListener('click', function () {
                 editTask(task.id);
             });
