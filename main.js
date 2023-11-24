@@ -95,7 +95,6 @@ function renderTasks() {
         if (task.completed) {
             listItem.classList.add('completed');
         } else {
-
             taskText.addEventListener('click', function () {
                 editTask(task.id);
             });
